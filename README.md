@@ -1,9 +1,7 @@
 # FizzBuzz
-
-## Function
-Plays the classic interview question/ children's game of FizzBuzz.<br>
-Two people count up starting from 1.<br>
-However, if the number is divisible by 3, you say *Fizz* instead. If the number is divisible by 5, you say *Buzz*.
+Plays the classic interview question/children's game of FizzBuzz.<br>
+Two people count up in turn starting from 1.<br>
+However, if the number is divisible by 3, you say *Fizz* instead. Also, if the number is divisible by 5, you say *Buzz* instead. <br>
 Finally, if the number is divisible by both 3 and 5, you say *FizzBuzz*. <br>
 
 ## Sample Output
