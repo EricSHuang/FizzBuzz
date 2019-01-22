@@ -4,6 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/**************
+ * Project Name: FizzBuzz
+ * By: Eric Huang
+ * Date: 2019 Jan. 22nd
+ * 
+ * Plays the game FizzBuzz and an alternate version of FizzBuzz called Pamplemousse.
+ * FizzBuzz counts up numbers starting from 1. When the number is divisible by 3, say Fizz. When the number is divisble by 5, say Buzz.
+ * When the number is divisble by both 3 and 5, say FizzBuzz.
+ * 
+ * Pamplemousse works like FizzBuzz. Count up starting from 1.
+ * When the number is divisible by 4 or contains 4, say Pamplemousse. 
+ * For example, you say 1, 2, 3 for those respective numbers, but say Pamplemousse for the numbers 4, 8, or 14.
+ *************/
+
 namespace FizzBuzz
 {
     class Program
@@ -19,28 +33,34 @@ namespace FizzBuzz
             double endingNumber = double.Parse(Console.ReadLine());
             if ((endingNumber <= 0) || (endingNumber > int.MaxValue))
             {
-                Console.WriteLine("Sorry, that number is out of range. We outputted the first 20 numbers of FizzBuzz instead.");
+                Console.WriteLine("Sorry, that number is out of range. We outputted the first 20 numbers instead.");
                 Console.WriteLine($"Please choose a number between 1 and {int.MaxValue} next time.");
                 endingNumber = 20;
             }
 
-            switch (game)
+            bool gameNotComplete = true;
+            while (gameNotComplete)
             {
-                case 1:
-                    int outputFizz = 3;
-                    int outputBuzz = 5;
-                    FizzBuzz(startingNumber, Convert.ToInt32(endingNumber), outputFizz, outputBuzz);
-                    break;
-                case 2:
-                    int value = 4; //the number we want to check against.
-                    string pamplemousse = "Pamplemousse";
-                    Pamplemousse(startingNumber, Convert.ToInt32(endingNumber), value, pamplemousse);
-                    break;
-                default:
-                    Console.WriteLine("That number is not one of the options.");
-                    Console.WriteLine("Please press 1 to play FizzBuzz or press 2 to play Pamplemousse.");
-                    //TODO: add loop so there can be reselection
-                    break;
+                switch (game)
+                {
+                    case 1:
+                        int outputFizz = 3;
+                        int outputBuzz = 5;
+                        FizzBuzz(startingNumber, Convert.ToInt32(endingNumber), outputFizz, outputBuzz);
+                        gameNotComplete = false;
+                        break;
+                    case 2:
+                        int value = 4; //if the number is divisible by or contains "value", output pamplemousse
+                        string pamplemousse = "Pamplemousse";
+                        Pamplemousse(startingNumber, Convert.ToInt32(endingNumber), value, pamplemousse);
+                        gameNotComplete = false;
+                        break;
+                    default:
+                        Console.WriteLine("That number is not one of the options.");
+                        Console.Write("Please press 1 to play FizzBuzz or press 2 to play Pamplemousse: ");
+                        game = int.Parse(Console.ReadLine());
+                        break;
+                }
             }
             
             //Used to keep the console on screen and text readable
