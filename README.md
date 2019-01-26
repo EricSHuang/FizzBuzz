@@ -16,4 +16,5 @@ The following is first 20 numbers of both games. The output could continue up to
 **Pamplemousse Output:** 1 2 3 Pamplemousse 5 6 7 Pamplemousse 9 10 11 Pamplemousse 13 Pamplemousse 15 Pamplemousse 17 18 19 Pamplemousse
 
 ## Context
-Used to learn the basics of C#.
+This was a small personal project that took two days to complete. <br>
+It was used to learn the basics of C# such as reading input, console output, and cases.
